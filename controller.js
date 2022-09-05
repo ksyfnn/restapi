@@ -30,3 +30,22 @@ exports.tampilId = function(req,res){
     });
     
 };
+
+// menambahkan data
+
+exports.tambahData = function(req,res){
+    var nama = req.body.nama;
+    var umur = req.body.umur;
+    var hobi = req.body.hobi;
+
+    connection.query('INSERT INTO tb_test (nama,umur,hobi) VALUES (?,?,?)',
+    [nama, umur, hobi],
+
+    function(error, rows, fields){
+        if (error) {
+            console.log(error);
+        } else {
+            response.ok("add data success",res);
+        }
+    });
+};
