@@ -8,7 +8,6 @@ exports.index = function(req, res){
 };
 
 // menampilkan data
-
 exports.tampilData = function(req,res){
     connection.query('SELECT * FROM tb_test', function(error, rows, fields) {
         if (error) {
@@ -17,4 +16,17 @@ exports.tampilData = function(req,res){
             response.ok(rows, res);
         }
     });
+};
+
+// tampil id
+exports.tampilId = function(req,res){
+    let id = req.params.id;
+    connection.query('SELECT * FROM tb_test WHERE id = ?', [id],
+    function(error, rows, fields) {
+        if (error){
+            connection.log(error);
+        }
+        response.ok(rows,res);
+    });
+    
 };
