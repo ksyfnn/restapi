@@ -1,6 +1,6 @@
 "use strick"
 
-var responsive = require('./rest');
+var response = require('./rest');
 var connection = require('./koneksi');
 const { response } = require('express');
 
