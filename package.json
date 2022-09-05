@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/ksyfnn/restapi/issues"
   },
-  "homepage": "https://github.com/ksyfnn/restapi#readme"
+  "homepage": "https://github.com/ksyfnn/restapi#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "mysql": "^2.18.1"
+  }
 }
