@@ -49,3 +49,21 @@ exports.tambahData = function(req,res){
         }
     });
 };
+
+// edit data berdasarkan id
+
+exports.editData = function(req,res){
+    var id = req.body.id;
+    var nama = req.body.nama;
+    var umur = req.body.umur;
+    var hobi = req.body.hobi;
+
+    connection.query('UPDATE tb_test SET nama=?, umur=?, hobi=? WHERE id=?', [nama,umur,hobi,id],
+        function(error,rows,fields){
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("update data success",res);        
+            }
+        });
+}
